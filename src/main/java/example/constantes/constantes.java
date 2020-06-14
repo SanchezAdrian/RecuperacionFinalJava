@@ -1,7 +1,7 @@
 package example.constantes;
 
 public class constantes {
-	public static final String LOGIN_VIEW="login";	
+	public static final String LOGIN_VIEW="Login";	
 	public static final String HOME ="home";
 	
 	//vistas para visualizar datos
