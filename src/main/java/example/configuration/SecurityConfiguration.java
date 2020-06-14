@@ -28,7 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/css/*", "/imagenes/*","/pokemons/registro","/pokemons/addUsuario").permitAll().anyRequest().authenticated().and()
+		http.authorizeRequests().antMatchers("comomolaspring.herokuapp.com/*","/css/*", "/imagenes/*","/pokemons/registro","/pokemons/addUsuario").permitAll().anyRequest().authenticated().and()
 		.formLogin().loginPage("/pokemons/login").loginProcessingUrl("/logincheck").usernameParameter("name")
 		.passwordParameter("password").defaultSuccessUrl("/pokemons/home").permitAll().and().logout()
 		.logoutUrl("/logout").logoutSuccessUrl("/pokemons/login").permitAll();
