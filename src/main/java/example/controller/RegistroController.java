@@ -46,7 +46,7 @@ public class RegistroController {
     public ModelAndView addUser(@RequestParam(value = "numero", required = false) String numero,@RequestParam(value = "email", required = false) String email,@ModelAttribute("usuario") UsuarioModel usuarioModel,@RequestParam(name="rol")  String rol,EntrenadorModel entrenadorModel, UsuarioRolModel usuarioRolModel, Model model, RedirectAttributes flash) {
         ModelAndView mav = new ModelAndView();
         usuarioModel.setPassword(enc.encrypt(usuarioModel.getPassword()));
-        if(rol.equals("ROL_ENTRENADOR")) {
+        if(rol.equals("ROLE_ENTRENADOR")) {
         	entrenadorModel.setEmail(email);
         	entrenadorModel.setTelefono(numero);
         	entrenadorModel.setNombre(usuarioModel.getUsername());
