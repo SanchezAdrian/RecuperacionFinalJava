@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Añadir mov-set</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+</head>
+
+<body class="bg-dark text-white">
+   <div class="card-head">
+        <h3> Añadir mov-set</h3>
+        <div class="card bg-dark">
+        <p class="my-6">
+                        <a href="/pokemons/listaPokemons" class="btn btn-primary"><i
+       class="fas fa-fa-backward ml-4"> Volver a lista</i></a>
+                    </p>
+            <div class="bg-dark text-white">
+                <div class="bg-secondary text-dark">
+                    <form action="#" th:action="@{/pokemons/addMovSet}" th:object="${pokemonMovimiento}" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                        <input type="hidden" th:field="*{id_movpoke}"/>
+                          
+                            
+                             <div class="form-group col-md-8">
+                                <a>Pokemon</a>
+                               <select class="form-control" id="id" name="id">
+                               		<option th:each="poke : ${pokemons}" th:value="${poke.id}" th:text="${poke.nombre}"></option>
+                               </select>
+                            </div>
+                            
+                             <div class="form-group col-md-8">
+                                <a>Movimiento 1</a>
+                               <select class="form-control" id="mov1" name="mov1">
+                               		<option th:each="mov : ${movimientos}" th:value="${mov.id}" th:text="${mov.nombre}"></option>
+                               </select>
+                            </div>
+                            
+                             <div class="form-group col-md-8">
+                                <a>Movimiento 2</a>
+                               <select class="form-control" id="mov2" name="mov2">
+                               		<option th:each="mov : ${movimientos}" th:value="${mov.id}" th:text="${mov.nombre}"></option>
+                               </select>
+                            </div>
+                            
+                             <div class="form-group col-md-8">
+                                <a>Movimiento 3</a>
+                               <select class="form-control" id="mov3" name="mov3">
+                               		<option th:each="mov : ${movimientos}" th:value="${mov.id}" th:text="${mov.nombre}"></option>
+                               </select>
+                            </div>
+                            
+                             <div class="form-group col-md-8">
+                                <a>Movimiento 4</a>
+                               <select class="form-control" id="mov4" name="mov4">
+                               		<option th:each="mov : ${movimientos}" th:value="${mov.id}" th:text="${mov.nombre}"></option>
+                               </select>
+                            </div>
+                            
+                            
+                            
+                       
+
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value="Añadir mov-set">
+                            </div>
+
+                     
+
+                        </div>
+                    </form>
+                </div>
+            	</div>
+            </div>
+        </div>
+</body>
+
+</html>

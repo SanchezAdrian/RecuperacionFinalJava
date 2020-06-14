@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Añadir equipo a la competicion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+</head>
+
+<body class="bg-dark text-white">
+   <div class="card-head">
+        <h3> Añadir equipo a la competicion</h3>
+        <div class="card bg-dark">
+        <p class="my-6">
+                        <a href="/pokemons/listaCompeticiones" class="btn btn-primary"><i
+       class="fas fa-fa-backward ml-4"> Volver a lista</i></a>
+                    </p>
+            <div class="bg-dark text-white">
+                <div class="bg-secondary text-dark">
+                    <form action="#" th:action="@{/pokemons/addEquipoCompite}" th:object="${equipoCompite}" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                        <input type="hidden" th:field="*{id}"/>
+                          
+                            
+                             <div class="form-group col-md-8">
+                                <a>Competicion</a>
+                               <select class="form-control" id="comp" name="comp">
+                               		<option th:each="competicion : ${competicions}" th:value="${competicion.id}" th:text="${competicion.nombre}"></option>
+                               </select>
+                            </div>
+                            
+                             <div class="form-group col-md-8">
+                                <a>Equipo</a>
+                               <select class="form-control" id="eq" name="eq">
+                               		<option th:each="equipo : ${equipos}" th:value="${equipo.id}" th:text="${equipo.nombre}"></option>
+                               </select>
+                            </div>
+                            
+                                <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Puesto</label> <input type="number" th:field="*{puesto}"  class="form-control" id="puesto" placeholder=""> <span th:if="${#fields.hasErrors('puesto')}" th:errors="*{puesto}" class="text-danger"></span>
+                            </div>
+                            
+                               </div>
+                            
+                              <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Puntos</label> <input type="number" th:field="*{puntos}"  class="form-control" id="puntos" placeholder=""> <span th:if="${#fields.hasErrors('puntos')}" th:errors="*{puntos}" class="text-danger"></span>
+                            </div>
+                            
+                       
+
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value="Añadir equipo a la competicion">
+                            </div>
+
+                     
+
+                        </div>
+                    </form>
+                </div>
+            	</div>
+            </div>
+        </div>
+</body>
+
+</html>

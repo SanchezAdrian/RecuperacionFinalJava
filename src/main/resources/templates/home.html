@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Starter Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+
+<link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+   	<link rel="stylesheet" href="/css/navbar.css">
+<link href="/css/starter-template.css" rel="stylesheet">
+  </head>
+
+
+  <body >
+  <div>
+  <nav class="navbar navbar-dark bg-dark justify-content-between">
+ 
+ 
+  <div>
+    <ul class="nav justify-content-end">
+      <li class="navbar-brand">
+       <a th:href="@{/pokemons/home}">Home</a>
+      </li>
+      <li class="navbar-brand">
+       <a th:href="@{/pokemons/listaEquipos}">Equipos</a>
+      </li>
+      <li class="navbar-brand">
+       <a th:href="@{/pokemons/listaCompeticiones}">Competiciones</a>
+      </li>
+      <li class="navbar-brand">
+         <a th:href="@{/pokemons/listaEntrenadores}">Entrenadores</a>
+      </li>
+         <li class="navbar-brand">
+         <a th:href="@{/pokemons/listaPokemons}">Pokemons</a>
+      </li>
+         <li class="navbar-brand">
+         <a th:href="@{/pokemons/listaMovimientos}">Movimientos</a>
+      </li>
+         <li class="navbar-brand">
+         <a th:href="@{/pokemons/listaTipos}">Tipos</a>
+      </li>
+      <li class="nav-item">
+                 <form class="form-inline" th:action="@{/logout}" method="POST">
+                  <button  class="btn btn-light my-2 my-sm-0" type="submit"> Logout </button>
+                  </form>
+            </li>
+    </ul>
+
+  </div>
+  </nav>
+  </div>
+  
+  
+  <div class="row">
+  <div class="col-sm-6">
+     <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="../image/eqfue.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Equipos</h5>
+    <p class="card-text">Aqui puedes ver los distintos equipos que hay creados</p>
+    <a th:href="@{/pokemons/listaEquipos}" class="btn btn-primary">Go!</a>
+  </div>
+</div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="../image/bea02.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Entrenadores</h5>
+    <p class="card-text">Puedes ver informacion de los entrenadores</p>
+    <a th:href="@{/pokemons/listaEntrenadores}" class="btn btn-primary">Go!</a>
+  </div>
+</div>
+  </div>
+  <div class="col-sm-6">
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="../image/battle.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Competiciones</h5>
+    <p class="card-text">Puedes ver informacion de las competiciones como los puestos que ha habido en ellas.</p>
+    <a th:href="@{/pokemons/listaCompeticiones}" class="btn btn-primary">Go!</a>
+  </div>
+</div>
+  </div>
+  <div class="col-sm-6">
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="../image/pokes.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Pokemons</h5>
+    <p class="card-text">Puedes ver los pokemons asi como los distintos movimientos con los que se usan</p>
+    <a th:href="@{/pokemons/listaPokemons}" class="btn btn-primary">Go!!</a>
+  </div>
+</div>
+</div>
+<div class="col-sm-6">
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="../image/tipos.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Tipos</h5>
+    <p class="card-text">Puedes ver los tipos que existen</p>
+    <a th:href="@{/pokemons/listaTipos}" class="btn btn-primary">Go!!</a>
+  </div>
+</div>
+  </div>
+  <div class="col-sm-6">
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="../image/lanzallamas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Movimientos</h5>
+    <p class="card-text">Puedes ver los movimientos que existen</p>
+    <a th:href="@{/pokemons/listaMovimientos}" class="btn btn-primary">Go!!</a>
+  </div>
+</div>
+  </div>
+        	
+ 
+
+
+
+
+
+
+ 
+  </body>
+</html>
